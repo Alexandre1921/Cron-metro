@@ -6,85 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
     <title>Cronometro</title>
 </head>
 
-<style>
-    * {
-        margin: 0 auto;
-        padding: 0;
-    }
 
-    body {
-        background-color: #111;
-    }
-
-    .max-width {
-        max-width: 500px;
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-        margin-top: 10%;
-        background-color: #FFF;
-        box-shadow: 0 0 5px #FFF;
-        text-align: center;
-    }
-
-    h1 {
-        font-family: 'Courier New', Courier, monospace;
-        margin-top: 20px;
-    }
-
-    button {
-        padding: 10px;
-        border: none;
-        outline: none;
-        font-family: 'Segoe UI';
-        font-size: 1.1em;
-        transition: all .5s;
-        cursor: pointer;
-        border-radius: 25px;
-    }
-
-    button:hover {
-        background-color: #a1c0d1;
-    }
-
-    button:active {
-        background-color: #111;
-    }
-
-    .bg-green {
-        background-color: #b2d1a1;
-    }
-
-    .bg-yellow {
-        background-color: #d1cba1;
-    }
-
-    .bg-red {
-        background-color: #d1a1a1;
-    }
-</style>
 
 <body>
-
-    <div class="max-width">
+    <div class="canto">
         <form>
             <div class="form-group">
-              <label for="exampleInputEmail1">Inserir Tempo</label>
-              <input type="number" class="form-control" id="mm" placeholder="Insira o minuto">
-              <br>
-              <input type="number" class="form-control" id="ss" placeholder="Insira o segundo">
-              <small id="emailHelp" class="form-text text-muted">Aqui você escolhe o tempo inicial</small>
+                <label for="exampleInputEmail1">Inserir Tempo</label>
+                <input type="number" class="form-control" id="mm" max=10 min=0 value=0 required placeholder="Insira o minuto">
+                <small id="emailHelp" class="form-text text-muted">Aqui você escolhe o tempo inicial</small>
             </div>
-          </form>
+
+        </form>
         <button onclick="start();" class="btn btn-success">Iniciar</button>
-        <button onclick="pause();" class="btn btn-secondary">Pausar</button>
-        <button onclick="stop();" class="btn btn-danger">Parar</button>
-        <h1 id="counter">00:00</h1>
+        <button onclick="reset();" class="btn btn-danger">Resetar</button>
     </div>
-<script src="cron.js"></script>
+    <div class="max-width">
+        <h1 id="counter">0:00</h1>
+    </div>
+    <script src="cron.js"></script>
 </body>
 
 </html>
