@@ -11,6 +11,14 @@ const texto = document.getElementById('texto');
 
 
 function doChanges() {
+    MM.value = Number(MM.value);
+    if (MM.value > 10) {
+        MM.value = 10;
+    } else {
+        if (MM.value < 0) {
+            MM.value = 0;
+        }
+    }
     if (iniciou) {
         mm = MM.value || 0;
         if (ss < 0) {
