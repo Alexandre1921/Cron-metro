@@ -51,11 +51,13 @@ function start() {
     if (iniciou) {
         iniciou = false;
         cron = setInterval(() => { timer(); }, tempo);
+        texto.innerHTML = inputTexto.value;
     }
 }
 
 function reset() {
     stop();
+    texto.innerHTML = 'Tempo Esgotado';
     iniciou = true;
 }
 
