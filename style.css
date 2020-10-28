@@ -3,11 +3,34 @@
     padding: 0;
 }
 
+.canto {
+    margin-top: 10%;
+    margin-left: 50px;
+    max-width: 500px;
+    position: absolute;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.canto-direito {
+    margin-top: 3%;
+    position: absolute;
+    margin-left: 80%;
+}
+
+.imgStyle {
+    width: 100%;
+    border-radius: 2px;
+}
+
 body {
     background-color: #111;
 }
 
 .max-width {
+    margin-left: 35%;
+    position: absolute;
     max-width: 500px;
     width: 100%;
     padding: 10px;
@@ -19,6 +42,7 @@ body {
 }
 
 h1 {
+    font-size: 135px;
     font-family: 'Courier New', Courier, monospace;
     margin-top: 20px;
 }

@@ -16,18 +16,30 @@
     <div class="canto">
         <form>
             <div class="form-group">
-                <label for="exampleInputEmail1">Inserir Tempo</label>
-                <input type="number" class="form-control" id="mm" max=10 min=0 value=0 required placeholder="Insira o minuto">
-                <small id="emailHelp" class="form-text text-muted">Aqui você escolhe o tempo inicial</small>
+                <label>Inserir Texto</label>
+                <input type="text" class="form-control" id="inputTexto" required placeholder="Insira o Texto">
+                <small class="form-text text-muted">Aqui você inseri o texto</small>
             </div>
-
+            <div class="form-group">
+                <label>Inserir Tempo</label>
+                <input type="number" class="form-control" id="mm" max=10 min=0 value=0 required placeholder="Insira o minuto">
+                <small class="form-text text-muted">Aqui você escolhe o tempo inicial</small>
+            </div>
         </form>
         <button onclick="start();" class="btn btn-success">Iniciar</button>
-        <button onclick="reset();" class="btn btn-danger">Resetar</button>
+        <button onclick="reset();" class="btn btn-danger">Zerar</button>
     </div>
+
     <div class="max-width">
+        <h2 id="texto">Aguardando</h2>
         <h1 id="counter">0:00</h1>
+        <img src="assets/logo2.jpeg" width="300px" width="750px">
     </div>
+
+    <div class="canto-direito">
+        <img class="imgStyle" src="assets/logo1.jpeg">
+    </div>
+
     <script src="cron.js"></script>
 </body>
 

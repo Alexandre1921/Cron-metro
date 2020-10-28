@@ -6,7 +6,9 @@ var ss = 0;
 var tempo = 1000; //Quantos milésimos valem 1 segundo?
 var cron;
 const MM = document.getElementById('mm');
-const SS = document.getElementById('ss');
+const inputTexto = document.getElementById('inputTexto');
+const texto = document.getElementById('texto');
+
 
 function doChanges() {
     if (iniciou) {
@@ -15,13 +17,23 @@ function doChanges() {
             ss = 0;
         }
         document.getElementById('counter').innerText = (MM.value || 0) + ':' + (ss < 10 ? '0' + ss : ss);
+        document.getElementById('texto').innerText = inputTexto.value;
     }
 }
+
 MM.addEventListener("keyup", () => {
     doChanges();
 });
 
 MM.addEventListener("keydown", () => {
+    doChanges();
+});
+
+inputTexto.addEventListener("keyup", () => {
+    doChanges();
+});
+
+inputTexto.addEventListener("keydown", () => {
     doChanges();
 });
 
