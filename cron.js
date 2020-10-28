@@ -8,6 +8,7 @@ var cron;
 const MM = document.getElementById('mm');
 const inputTexto = document.getElementById('inputTexto');
 const texto = document.getElementById('texto');
+const counter = document.getElementById('counter');
 
 
 function doChanges() {
@@ -24,8 +25,9 @@ function doChanges() {
         if (ss < 0) {
             ss = 0;
         }
-        document.getElementById('counter').innerText = (MM.value || 0) + ':' + (ss < 10 ? '0' + ss : ss);
-        document.getElementById('texto').innerText = inputTexto.value;
+        counter.innerText = (MM.value || 0) + ':' + (ss < 10 ? '0' + ss : ss);
+        texto.innerText = inputTexto.value;
+        counter.style.color = '#212529';
     }
 }
 
@@ -58,6 +60,7 @@ function start() {
 function reset() {
     stop();
     texto.innerHTML = 'Tempo Esgotado';
+    counter.style.color = '#212529';
     iniciou = true;
 }
 
@@ -68,20 +71,23 @@ function stop() {
     mm = MM.value || 0
     ss = 0;
 
-    document.getElementById('counter').innerText = (MM.value || 0) + ':' + (ss < 10 ? '0' + ss : ss);
+    counter.innerText = (MM.value || 0) + ':' + (ss < 10 ? '0' + ss : ss);
 }
 
 //Faz a contagem do tempo e exibição
 function timer() {
+    if (ss <= 10 && mm <= 0) {
+        counter.style.color = 'red';
+    }
     if (ss <= 0) { //Verifica se deu 59 segundos
         ss = 59; //Volta os segundos para 0
         mm--; //Adiciona +1 na variável mm
 
         if (mm < 0) { //Verifica se deu 59 minutos
-            console.log('b');
             MM.value = 0;
             reset();
         }
+
 
     }
 
@@ -89,7 +95,7 @@ function timer() {
     var format = mm + ':' + (ss < 10 ? '0' + ss : ss);
 
     //Insere o valor tratado no elemento counter
-    document.getElementById('counter').innerText = format;
+    counter.innerText = format;
 
 
     ss--; //Incrementa +1 na variável ss
