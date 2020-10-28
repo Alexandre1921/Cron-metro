@@ -16,8 +16,8 @@ function doChanges() {
     if (MM.value > 10) {
         MM.value = 10;
     } else {
-        if (MM.value < 0) {
-            MM.value = 0;
+        if (MM.value < 1) {
+            MM.value = 1;
         }
     }
     if (iniciou) {
@@ -27,6 +27,7 @@ function doChanges() {
         }
         counter.innerText = (MM.value || 0) + ':' + (ss < 10 ? '0' + ss : ss);
         texto.innerText = inputTexto.value;
+        texto.style.color = '#212529';
         counter.style.color = '#212529';
     }
 }
@@ -60,7 +61,6 @@ function start() {
 function reset() {
     stop();
     texto.innerHTML = 'Tempo Esgotado';
-    counter.style.color = '#212529';
     iniciou = true;
 }
 
@@ -77,6 +77,7 @@ function stop() {
 //Faz a contagem do tempo e exibição
 function timer() {
     if (ss <= 10 && mm <= 0) {
+
         counter.style.color = 'red';
     }
     if (ss <= 0) { //Verifica se deu 59 segundos
@@ -85,6 +86,7 @@ function timer() {
 
         if (mm < 0) { //Verifica se deu 59 minutos
             MM.value = 0;
+            texto.style.color = 'red';
             reset();
         }
 
