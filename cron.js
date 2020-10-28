@@ -1,6 +1,6 @@
 "use strict"
 
-var mm = 0;
+var mm = 1;
 var ss = 0;
 
 var tempo = 1000; //Quantos milésimos valem 1 segundo?
@@ -13,13 +13,6 @@ const counter = document.getElementById('counter');
 
 function doChanges() {
     MM.value = Number(MM.value);
-    if (MM.value > 10) {
-        MM.value = 10;
-    } else {
-        if (MM.value < 1) {
-            MM.value = 1;
-        }
-    }
     if (iniciou) {
         mm = MM.value || 0;
         if (ss < 0) {

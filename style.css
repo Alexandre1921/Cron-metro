@@ -41,9 +41,15 @@ body {
     text-align: center;
 }
 
+@font-face {
+    font-family: myFirstFont;
+    src: url(assets/WHOOPASS.TTF);
+}
+
 h1 {
+    letter-spacing: 40px;
     font-size: 180px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: myFirstFont, Courier, monospace;
     max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -51,8 +57,9 @@ h1 {
 }
 
 #texto {
+    letter-spacing: 5px;
     font-size: 30px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: myFirstFont, Courier, monospace;
     max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
