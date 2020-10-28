@@ -25,11 +25,11 @@ function doChanges() {
     }
 }
 
-MM.addEventListener("keyup", () => {
+MM.addEventListener("change", () => {
     doChanges();
 });
 
-MM.addEventListener("keydown", () => {
+MM.addEventListener("change", () => {
     doChanges();
 });
 
