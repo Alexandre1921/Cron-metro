@@ -41,6 +41,13 @@ body {
     text-align: center;
 }
 
+#texto {
+    max-width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 h1 {
     font-size: 135px;
     font-family: 'Courier New', Courier, monospace;
